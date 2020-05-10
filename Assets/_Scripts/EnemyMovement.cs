@@ -9,16 +9,19 @@ public class EnemyMovement : MonoBehaviour
 {
     Transform target;
     public enum Mode { SCATTER, CHASE }
-    public Mode current = Mode.SCATTER;
+    NavMeshAgent agent;
+    Vector3 dest;
     bool isTraveling = false;
 
+    [Header("Movement settings")]
+    public Mode current = Mode.SCATTER;
     public float scatterTime = 7;
     public float chaseTime = 20;
 
-    NavMeshAgent agent;
+    [Header("Detection settings")]
     public float radius = 10f;
-    Vector3 dest;
-    float TimeToEndChase;
+    public float TimeToEndChase;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,7 @@ public class EnemyMovement : MonoBehaviour
         agent.SetDestination(target.position);
         if (Time.time >= TimeToEndChase)
         {
+            print("End chase");
             current = Mode.SCATTER;
             isTraveling = false;
         }   
@@ -109,5 +113,10 @@ public class EnemyMovement : MonoBehaviour
     {
         
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public void ToggleIsTraveling()
+    {
+        isTraveling = !isTraveling;
     }
 }
