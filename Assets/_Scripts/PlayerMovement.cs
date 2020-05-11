@@ -8,11 +8,12 @@ public class PlayerMovement : MonoBehaviour
     public float MoveSpeed = 5f;
     float h, v;
     Vector3 movement;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,8 +23,8 @@ public class PlayerMovement : MonoBehaviour
         v = Input.GetAxis("Vertical");
 
         movement = new Vector3(h, 0, v);
-
-        transform.Translate(MoveSpeed * movement * Time.deltaTime, Space.World);
+        rb.AddForce(movement * MoveSpeed);
+        //transform.Translate(MoveSpeed * movement * Time.deltaTime, Space.World);
         
         if (movement == Vector3.zero) return;
         

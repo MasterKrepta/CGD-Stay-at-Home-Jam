@@ -70,7 +70,7 @@ public class EnemyMovement : MonoBehaviour
         agent.SetDestination(target.position);
         if (Time.time >= TimeToEndChase)
         {
-            print("End chase");
+            //print("End chase");
             current = Mode.SCATTER;
             isTraveling = false;
         }   

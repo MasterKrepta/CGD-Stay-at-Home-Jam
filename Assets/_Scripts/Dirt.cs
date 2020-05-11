@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dirt : MonoBehaviour
+public class Dirt : MonoBehaviour, IHideable
 {
+    public Material mat;
     public int BitesNeeded = 3;
     private int currentBites = 0;
     FlashOnHit flash;
@@ -28,5 +29,16 @@ public class Dirt : MonoBehaviour
     private void Consume()
     {
         Destroy(this.gameObject);
+    }
+
+    public void ToggleMat()
+    {
+        this.GetComponent<Renderer>().material = mat;
+    }
+
+    public void HideMat(Material hideMat)
+    {
+        this.GetComponent<Renderer>().material = hideMat;
+
     }
 }
