@@ -6,7 +6,7 @@ public class BlockVisibiity : MonoBehaviour
 {
     public bool isExposed = false;
     public LayerMask levelLayer;
-    float range = 0.5f;
+    public float range = 0.5f;
     
     public Transform[] sides;
 
@@ -37,12 +37,12 @@ public class BlockVisibiity : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        
+
         foreach (var side in sides)
         {
             Vector3 fwd = transform.TransformDirection(side.forward);
             Debug.DrawRay(side.position, fwd * range, Color.yellow);
         }
-        
+
     }
 }
