@@ -16,12 +16,11 @@ public class DetectTarget : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //TODO reenable after testing
-        //if (other.gameObject.GetComponent<PlayerMovement>() != null)
-        //{
-        //    em.ToggleIsTraveling();
-        //    em.current = EnemyMovement.Mode.CHASE;
-        //}
+        if (other.gameObject.GetComponent<PlayerMovement>() != null)
+        {
+            em.ToggleIsTraveling();
+            em.current = EnemyMovement.Mode.CHASE;
+        }
 
     }
 
