@@ -5,28 +5,21 @@ using UnityEngine;
 public class PatrolPath : MonoBehaviour
 {
     public List<Node> Nodes = new List<Node>();
-    private int _childCount;
 
-    int oldChildCount;
-    public int ChildCount
-    {
-        get { return _childCount; }
-        set { _childCount = value; }
-    }
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        oldChildCount = ChildCount;
+        
         PopulateNodes();
     }
 
     private void PopulateNodes()
     {
-         var children= this.GetComponentsInChildren<Node>();
+         
         //print(children.Length);
-        foreach (var node in children)
+        foreach (var node in this.GetComponentsInChildren<Node>())
         {
             Nodes.Add(node);
         }
@@ -40,11 +33,16 @@ public class PatrolPath : MonoBehaviour
 
     public void AddNode(Node n)
     {
+        if (Nodes.Contains(n)) return;
+        
         Nodes.Add(n);
+        //print($"{n.name} Added");
     }
 
     public void RemoveNode(Node n)
     {
+        if (!Nodes.Contains(n)) return;
+
         Nodes.Remove(n);
     }
 

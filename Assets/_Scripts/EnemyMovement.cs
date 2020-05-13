@@ -21,17 +21,31 @@ public class EnemyMovement : MonoBehaviour
     [Header("Detection settings")]
     public float radius = 10f;
     public float TimeToEndChase;
-    
+
+    PatrolPath patrolPaths;
+    public bool goingBackward = false;
+    public int currentIndex = -1;
+    public int children;
+    float waitDuration = .25f;
+    float waitTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        patrolPaths = GameObject.FindObjectOfType<PatrolPath>();
+        
+    }
+
+    private void UpdateChildCount()
+    {
+        children = patrolPaths.Nodes.Count;
     }
 
     // Update is called once per frame
     void Update()
+
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -44,10 +58,18 @@ public class EnemyMovement : MonoBehaviour
                 if (isTraveling == false)
                 {
                     isTraveling = true;
-                    dest = GetRandomPos();
-                    AssignTargetScatter();
+                    //dest = GetClosestWaypoint();
+                    dest = GetToNextWaypoint();
+                    //dest = GetRandomPos();
+                
                 }
-                ScatterMovement();
+
+                if (isTraveling)
+                {
+                    AssignTargetScatter();
+                    ScatterMovement();
+                }
+                
 
                 break;
             case Mode.CHASE:
@@ -78,12 +100,19 @@ public class EnemyMovement : MonoBehaviour
 
     private void ScatterMovement()
     {
-        
+        //print("CHILDREN: " + patrolPaths.Nodes.Count);
         
         if (agent.remainingDistance <= .2)
         {
-            isTraveling = false;
-            dest = GetRandomPos();
+            waitTimer += Time.deltaTime;
+            if (waitTimer > waitDuration)
+            {
+                waitTimer = 0;
+                isTraveling = false;
+            }
+            
+            //dest = GetRandomPos();
+            //dest = GetToNextWaypoint();
         }
         
     }
@@ -94,6 +123,62 @@ public class EnemyMovement : MonoBehaviour
         agent.SetDestination(dest);
     }
 
+    Vector3 GetClosestWaypoint()
+    {
+
+        //Vector3 result = patrolPaths.Nodes[0].transform.position;
+        Vector3 result = Vector3.zero;
+        float closestdist = Vector3.Distance(patrolPaths.Nodes[0].transform.position, transform.position);
+
+        for (int i = 0; i < patrolPaths.Nodes.Count - 1; i++)
+        {
+
+            float temp = Vector3.Distance(patrolPaths.Nodes[i].transform.position, transform.position);
+            if (temp < closestdist)
+            {
+                closestdist = temp;
+                result = patrolPaths.Nodes[i].transform.position;
+            }
+        }
+
+        return result;
+    }
+
+    Vector3 GetToNextWaypoint()
+    {
+        UpdateChildCount();
+
+        if (goingBackward)
+        {
+            currentIndex--;
+        }
+        else
+        {
+            currentIndex++;
+        }
+
+        if (currentIndex > children || currentIndex < 0)
+        {
+            goingBackward = !goingBackward;
+            if (goingBackward == false)
+            {
+                print("zero out index");
+                currentIndex = -1;
+                currentIndex++;
+            }
+            else
+            {
+                print("max out index");
+                currentIndex = children;
+                currentIndex--;
+            }
+
+        }
+        //print(patrolPaths.Nodes.Count + " is the node count value");
+        return patrolPaths.Nodes[currentIndex].transform.position;
+
+
+    }
 
     Vector3 GetRandomPos()
     {

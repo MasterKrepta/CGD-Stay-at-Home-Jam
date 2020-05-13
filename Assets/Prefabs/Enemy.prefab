@@ -137,6 +137,9 @@ MonoBehaviour:
   chaseTime: 5
   radius: 10
   TimeToEndChase: 0
+  goingBackward: 0
+  currentIndex: 0
+  children: 0
 --- !u!114 &1574296144464646262
 MonoBehaviour:
   m_ObjectHideFlags: 0
