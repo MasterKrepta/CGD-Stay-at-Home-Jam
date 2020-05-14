@@ -11,6 +11,8 @@ public class Respawn : MonoBehaviour
 
     private void OnEnable()
     {
+        StartPoint = GameObject.Find("START_POINT").transform;
+        transform.position = StartPoint.position;
         EnableScripts();
     }
 
@@ -21,7 +23,7 @@ public class Respawn : MonoBehaviour
         {
             s.enabled = true;
         }
-        print(Scripts.Length + " scripts enabled");
+        
     }
 
     private void OnDisable()
@@ -30,7 +32,7 @@ public class Respawn : MonoBehaviour
         {
             s.enabled = false;
         }
-        print(Scripts.Length + " scripts Disabled");
+        
         GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
