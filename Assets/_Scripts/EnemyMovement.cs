@@ -29,6 +29,10 @@ public class EnemyMovement : MonoBehaviour
     float waitDuration = .25f;
     float waitTimer;
 
+    public bool IsStunned = false;
+    public float stunDelay = 1.5f;
+    public float timeToUnstun = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,45 +56,58 @@ public class EnemyMovement : MonoBehaviour
             current = Mode.CHASE;
             isTraveling = false;
         }
-        switch (current)
+
+        if (IsStunned == false)
         {
-            case Mode.SCATTER:
-                if (isTraveling == false)
-                {
-                    isTraveling = true;
-                    //dest = GetClosestWaypoint();
-                    dest = GetToNextWaypoint();
-                    //dest = GetRandomPos();
-                
-                }
+            switch (current)
+            {
 
-                if (isTraveling)
-                {
-                    AssignTargetScatter();
-                    ScatterMovement();
-                }
-                
+                case Mode.SCATTER:
+                    if (isTraveling == false)
+                    {
+                        isTraveling = true;
+                        //dest = GetClosestWaypoint();
+                        dest = GetToNextWaypoint();
+                        //dest = GetRandomPos();
 
-                break;
-            case Mode.CHASE:
+                    }
 
-                if (isTraveling == false)
-                {
-                    isTraveling = true;
-                    
-                    TimeToEndChase = Time.time + chaseTime;
-                }
-                ChaseMovement();
-                break;
-            default:
-                break;
+                    if (isTraveling)
+                    {
+                        AssignTargetScatter();
+                        ScatterMovement();
+                    }
+
+
+                    break;
+                case Mode.CHASE:
+
+                    if (isTraveling == false)
+                    {
+                        isTraveling = true;
+
+                        TimeToEndChase = Time.time + chaseTime;
+                    }
+                    ChaseMovement();
+                    break;
+                default:
+                    break;
+            }
         }
+        else
+        {
+            if (CanUnstun())
+            {
+                IsStunned = false;
+            }
+        }
+        
     }
 
     private void ChaseMovement()
     {
         agent.SetDestination(target.position);
-        if (Time.time >= TimeToEndChase)
+        if (Time.time >= TimeToEndChase || target.gameObject.activeInHierarchy == false)
         {
             //print("End chase");
             current = Mode.SCATTER;
@@ -203,5 +220,18 @@ public class EnemyMovement : MonoBehaviour
     public void ToggleIsTraveling()
     {
         isTraveling = !isTraveling;
+    }
+
+    public void StunEnemy()
+    {
+        IsStunned = true;
+        
+        timeToUnstun = Time.time + timeToUnstun;
+    }
+    private bool CanUnstun()
+    {
+        var result = Time.time > timeToUnstun ? true : false;
+        return result;
+
     }
 }
