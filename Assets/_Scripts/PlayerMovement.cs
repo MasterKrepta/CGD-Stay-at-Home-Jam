@@ -37,9 +37,12 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Moving", true);
         }
-            
+
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(movement);
+        }
         
-        transform.rotation = Quaternion.LookRotation(movement);
 
     }
 

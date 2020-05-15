@@ -30,4 +30,9 @@ public class HideNode : MonoBehaviour
         }
 
     }
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, -transform.up * range, Color.yellow);
+    }
 }
