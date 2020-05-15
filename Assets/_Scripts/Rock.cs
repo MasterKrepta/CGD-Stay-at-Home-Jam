@@ -9,12 +9,12 @@ public class Rock : MonoBehaviour, IHideable
 
     public void HideMat(Material hideMat)
     {
-        this.GetComponent<Renderer>().material = hideMat;
+        this.GetComponentInChildren<Renderer>().material = hideMat;
     }
 
     public void ToggleMat()
     {
-        this.GetComponent<Renderer>().material = mat;
+        this.GetComponentInChildren<Renderer>().material = mat;
     }
 
 

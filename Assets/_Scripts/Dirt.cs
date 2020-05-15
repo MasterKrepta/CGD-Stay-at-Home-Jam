@@ -33,12 +33,12 @@ public class Dirt : MonoBehaviour, IHideable
 
     public void ToggleMat()
     {
-        this.GetComponent<Renderer>().material = mat;
+        this.GetComponentInChildren<Renderer>().material = mat;
     }
 
     public void HideMat(Material hideMat)
     {
-        this.GetComponent<Renderer>().material = hideMat;
+        this.GetComponentInChildren<Renderer>().material = hideMat;
 
     }
 }

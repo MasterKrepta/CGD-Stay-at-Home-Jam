@@ -14,7 +14,7 @@ public class FlashOnHit : MonoBehaviour
 
     void Start()
     {
-        renderers = GetComponents<Renderer>();
+        renderers = GetComponentsInChildren<Renderer>();
         GetOriginalColors();
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c7edd6c18b6222d47bb3ca0d5437895c,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -1088,6 +1089,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1574296144464646271, guid: 4c646140c023fd547a26db0dbda187c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c646140c023fd547a26db0dbda187c1, type: 3}
 --- !u!4 &1942455202 stripped
@@ -1102,7 +1108,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 396122785}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2052810369
+--- !u!95 &2052810370
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1266,6 +1272,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 531492432, guid: 47f6c4f8ab74ef24998fbe2ebefe68d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.427
+      objectReference: {fileID: 0}
+    - target: {fileID: 531492432, guid: 47f6c4f8ab74ef24998fbe2ebefe68d5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.793
+      objectReference: {fileID: 0}
     - target: {fileID: 724101060, guid: 47f6c4f8ab74ef24998fbe2ebefe68d5, type: 3}
       propertyPath: m_Constraints
       value: 116
