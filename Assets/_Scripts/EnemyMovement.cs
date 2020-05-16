@@ -185,7 +185,6 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
-                print("max out index");
                 currentIndex = children;
                 currentIndex--;
             }
