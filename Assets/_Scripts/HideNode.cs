@@ -18,6 +18,8 @@ public class HideNode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (node.isVisible) return;
+        
         RaycastHit hit;
 
         if (!Physics.Raycast(down.position, down.forward, out hit, range, levelLayer)) {

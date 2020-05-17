@@ -36,6 +36,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentIndex = 0;
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         patrolPaths = GameObject.FindObjectOfType<PatrolPath>();
@@ -174,7 +175,7 @@ public class EnemyMovement : MonoBehaviour
             currentIndex++;
         }
 
-        if (currentIndex > children || currentIndex < 0)
+        if (currentIndex > children-1 || currentIndex < 0)
         {
             goingBackward = !goingBackward;
             if (goingBackward == false)
@@ -191,6 +192,8 @@ public class EnemyMovement : MonoBehaviour
 
         }
         //print(patrolPaths.Nodes.Count + " is the node count value");
+        currentIndex = Mathf.Clamp(currentIndex, 0, children-1);
+   
         return patrolPaths.Nodes[currentIndex].transform.position;
 
 

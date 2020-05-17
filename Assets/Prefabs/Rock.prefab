@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 3157695055610534492}
   - component: {fileID: 8195910145215573694}
   - component: {fileID: 5404453798794579275}
+  - component: {fileID: 3030361968148043302}
   m_Layer: 9
   m_Name: Rock
   m_TagString: Untagged
@@ -271,6 +272,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HiddenMat: {fileID: 2100000, guid: 86acbd1e822324149a19036661acc2cf, type: 2}
+--- !u!208 &3030361968148043302
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812458272116348679}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 0.5, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7998123948508566064
 GameObject:
   m_ObjectHideFlags: 0

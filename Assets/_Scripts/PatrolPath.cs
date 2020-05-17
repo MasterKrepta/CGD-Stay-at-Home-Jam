@@ -21,7 +21,11 @@ public class PatrolPath : MonoBehaviour
         //print(children.Length);
         foreach (var node in this.GetComponentsInChildren<Node>())
         {
-            Nodes.Add(node);
+            if (!Nodes.Contains(node)) 
+            {
+                Nodes.Add(node);
+            }
+            
         }
     }
 
@@ -53,4 +57,7 @@ public class PatrolPath : MonoBehaviour
             Debug.DrawLine(Nodes[i].transform.position, Nodes[i + 1].transform.position, Color.green);
         }
     }
+
+  
+    
 }
