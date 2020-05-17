@@ -7,6 +7,12 @@ public class PlayerAttack : MonoBehaviour
     public float range = 1.2f;
     public float biteDelay = 0.25f;
     float timeToNextBite = 0;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (Physics.Raycast(transform.position, fwd, out hit, range))
         {
+            rb.velocity = Vector3.zero;
             var temp = hit.transform.GetComponent<Dirt>();
 
             if (temp != null)
