@@ -5,14 +5,24 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public float range = 1.2f;
+    public float biteDelay = 0.25f;
+    float timeToNextBite = 0;
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (CanBite())
         {
             TakeBite();
+            timeToNextBite = Time.time + biteDelay;
         }
+
+
+        //if (Input.GetKeyDown(KeyCode.Space) && CanBite())
+        //{
+        //    TakeBite();
+        //    timeToNextBite = Time.time + biteDelay;
+        //}
     }
 
     private void TakeBite()
@@ -36,5 +46,10 @@ public class PlayerAttack : MonoBehaviour
     {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         Debug.DrawRay(transform.position, fwd * range, Color.yellow);
+    }
+
+    bool CanBite()
+    {
+        return timeToNextBite < Time.time;
     }
 }
