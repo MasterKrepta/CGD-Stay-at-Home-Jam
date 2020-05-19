@@ -106,3 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba15547a54e3df64fa30702e7d27a419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelToLoad: 0
+  timeToNextLevel: 3
+  AnimationParents: {fileID: 0}

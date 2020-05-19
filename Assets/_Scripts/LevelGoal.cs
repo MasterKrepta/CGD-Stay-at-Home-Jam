@@ -7,13 +7,38 @@ using UnityEngine.SceneManagement;
 public class LevelGoal : MonoBehaviour
 {
     public int LevelToLoad = 0;
-    public int timeToNextLevel = 3;
+    public int timeToNextLevel = 1;
+    public GameObject AnimationParents;
+    Animator[] animations;
+    int currentAnim;
     
 
     private void Start()
     {
+        animations = AnimationParents.GetComponentsInChildren<Animator>();
+        currentAnim = ConfigAnims();
+
+        animations[currentAnim].gameObject.SetActive(true);
+        animations[currentAnim].SetTrigger("Start");
         LevelToLoad = SceneManager.GetActiveScene().buildIndex;
     }
+
+    private int ConfigAnims()
+    {
+        foreach (var a in animations)
+        {
+            a.gameObject.SetActive(false);
+        }
+        return UnityEngine.Random.Range(0, animations.Length);
+    }
+
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        StartCoroutine("LevelTransition");
+    //    }
+    //}
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -27,8 +52,10 @@ public class LevelGoal : MonoBehaviour
     IEnumerator LevelTransition()
 
     {
-        //tODO set up level change transitions;
-        print("Waiting for 3 seconds");
+        currentAnim = ConfigAnims();
+        animations[currentAnim].gameObject.SetActive(true);
+
+        animations[currentAnim].SetTrigger("End");
         yield return new WaitForSeconds(timeToNextLevel);
         LoadNextLevel();
     }
@@ -39,4 +66,6 @@ public class LevelGoal : MonoBehaviour
         LevelToLoad++;
         SceneManager.LoadScene(LevelToLoad);
     }
+
+    
 }
