@@ -9,16 +9,19 @@ public class Dirt : MonoBehaviour, IHideable
     public int BitesNeeded = 3;
     private int currentBites = 0;
     FlashOnHit flash;
+    AudioSource soundClip;
 
     private void OnEnable()
     {
         flash = GetComponent<FlashOnHit>();
+        soundClip = GetComponent<AudioSource>();
     }
 
 
     public void BiteDirt()
     {
         flash.FlashColors();
+        soundClip.Play();
         currentBites++;
         if (currentBites >= BitesNeeded)
         {

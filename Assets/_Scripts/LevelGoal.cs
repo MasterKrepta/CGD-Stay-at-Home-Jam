@@ -15,11 +15,15 @@ public class LevelGoal : MonoBehaviour
 
     private void Start()
     {
-        animations = AnimationParents.GetComponentsInChildren<Animator>();
-        currentAnim = ConfigAnims();
+        if (AnimationParents.activeInHierarchy == true)
+        {
+            animations = AnimationParents.GetComponentsInChildren<Animator>();
+            currentAnim = ConfigAnims();
 
-        animations[currentAnim].gameObject.SetActive(true);
-        animations[currentAnim].SetTrigger("Start");
+            animations[currentAnim].gameObject.SetActive(true);
+            animations[currentAnim].SetTrigger("Start");
+        }
+        
         LevelToLoad = SceneManager.GetActiveScene().buildIndex;
     }
 
