@@ -8,6 +8,8 @@ public class StunOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.isTrigger) return;
+        
         var em = other.GetComponent<EnemyMovement>();
         if (em != null && em.IsStunned == false)
         {
@@ -20,6 +22,4 @@ public class StunOnTrigger : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-
 }

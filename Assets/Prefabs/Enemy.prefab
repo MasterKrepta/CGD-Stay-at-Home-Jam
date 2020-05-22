@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1352378322}
   - component: {fileID: 1352378324}
   - component: {fileID: 1352378323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: damageDealer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 1574296144464646260}
   - component: {fileID: 1660313116}
   - component: {fileID: 1660313115}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,6 +203,8 @@ MonoBehaviour:
   IsStunned: 0
   stunDelay: 1.5
   timeToUnstun: 0
+  currentTime: 0
+  Movespeed: 3
 --- !u!114 &1574296144464646262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,8 +259,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7735849, g: 0.51248276, b: 0.18609823, a: 1}
-  m_Intensity: 30
-  m_Range: 15
+  m_Intensity: 10
+  m_Range: 7
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

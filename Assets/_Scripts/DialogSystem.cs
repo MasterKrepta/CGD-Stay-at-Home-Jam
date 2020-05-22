@@ -8,7 +8,7 @@ public class DialogSystem : MonoBehaviour
 
 
     
-    List<string> transmissions = new List<string>();
+    List<string> dialog = new List<string>();
     [SerializeField] GameObject dialogBox;
     [SerializeField] TMP_Text dialogText;
     [SerializeField] int index = -1;
@@ -18,20 +18,20 @@ public class DialogSystem : MonoBehaviour
     {
         dialogBox.SetActive(false);
         
-        transmissions.Clear();
+        dialog.Clear();
 
         
-        transmissions.Add("Hey... Wake up");
-        transmissions.Add("The Fairy Feast is starting soon");
-        transmissions.Add("You need to find a way out");
-        transmissions.Add("Face the dirt to eat your way through the maze");
-        transmissions.Add("BREAK");
+        dialog.Add("Hey... Wake up");
+        dialog.Add("The Fairy Feast is starting soon");
+        dialog.Add("You need to find a way out");
+        dialog.Add("Face the dirt to eat your way through the maze");
+        dialog.Add("BREAK");
 
-        transmissions.Add("Oh no.. i can sense danger");
-        transmissions.Add("Make sure you stay hidden");
-        transmissions.Add("Press SPACE to stun them so you can escape");
-        transmissions.Add("Make sure you hide fast, as they wont stay stunned for long");
-        transmissions.Add("BREAK");
+        dialog.Add("Oh no.. i can sense danger");
+        dialog.Add("Make sure you stay hidden");
+        dialog.Add("Press SPACE to stun them so you can escape");
+        dialog.Add("Make sure you hide fast, as they wont stay stunned for long");
+        dialog.Add("BREAK");
 
 
 
@@ -50,13 +50,13 @@ public class DialogSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         dialogText.text = "";
-        if (transmissions[index] == "BREAK")
+        if (dialog[index] == "BREAK")
         {
             dialogBox.SetActive(false);
 
             yield break;
         }
-        foreach (char c in transmissions[index])
+        foreach (char c in dialog[index])
         {
             yield return new WaitForSeconds(typingSpeed);
             dialogText.text += c;

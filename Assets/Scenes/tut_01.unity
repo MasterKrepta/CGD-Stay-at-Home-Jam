@@ -6272,6 +6272,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: transitionCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 9115921218615717288, guid: 9970bb7f4e642d04dae2969bcf39b68f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9115921218615717292, guid: 9970bb7f4e642d04dae2969bcf39b68f,
         type: 3}
       propertyPath: m_LocalPosition.x

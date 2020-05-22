@@ -18,7 +18,7 @@ public class Spit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G) && CanSpit())
+        if (Input.GetKeyDown(KeyCode.Space) && CanSpit())
         {
             GameObject go =  Instantiate(spitPrefab, mouthPoint.position, Quaternion.identity);
             Rigidbody rb = go.GetComponent<Rigidbody>();

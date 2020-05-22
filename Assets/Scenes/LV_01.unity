@@ -80316,25 +80316,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1578367085}
-    - target: {fileID: 1530575443, guid: 9b3ca600fcf4e7f49b27fbec7fee499b, type: 3}
-      propertyPath: offset.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917027100112883093, guid: 9b3ca600fcf4e7f49b27fbec7fee499b,
-        type: 3}
-      propertyPath: index
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917027100112883093, guid: 9b3ca600fcf4e7f49b27fbec7fee499b,
-        type: 3}
-      propertyPath: dialogText
-      value: 
-      objectReference: {fileID: 925632446}
     - target: {fileID: 5917027100112883093, guid: 9b3ca600fcf4e7f49b27fbec7fee499b,
         type: 3}
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1420568912}
+    - target: {fileID: 5917027100112883093, guid: 9b3ca600fcf4e7f49b27fbec7fee499b,
+        type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 925632446}
     - target: {fileID: 6753663832150200168, guid: 9b3ca600fcf4e7f49b27fbec7fee499b,
         type: 3}
       propertyPath: m_Name

@@ -32,6 +32,8 @@ public class EnemyMovement : MonoBehaviour
     public bool IsStunned = false;
     public float stunDelay = 1.5f;
     public float timeToUnstun = 0;
+    public float currentTime;
+    public float Movespeed = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
 
     {
+        currentTime = Time.time;
         if (Input.GetKeyDown(KeyCode.Y))
         {
             current = Mode.CHASE;
@@ -99,6 +102,8 @@ public class EnemyMovement : MonoBehaviour
         {
             if (CanUnstun())
             {
+                GetComponent<Light>().enabled = true;
+                agent.speed = Movespeed;
                 IsStunned = false;
             }
         }
@@ -227,12 +232,14 @@ public class EnemyMovement : MonoBehaviour
     public void StunEnemy()
     {
         IsStunned = true;
-        
-        timeToUnstun = Time.time + timeToUnstun;
+        GetComponent<Light>().enabled = false;
+        agent.speed = 0;
+        timeToUnstun = Time.time + stunDelay;
     }
     private bool CanUnstun()
     {
         var result = Time.time > timeToUnstun ? true : false;
+        
         return result;
 
     }

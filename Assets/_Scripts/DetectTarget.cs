@@ -16,6 +16,8 @@ public class DetectTarget : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        print($"{this.name} hits {other.name}");
         if (other.gameObject.GetComponent<PlayerMovement>() != null)
         {
             em.ToggleIsTraveling();
