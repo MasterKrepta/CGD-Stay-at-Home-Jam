@@ -34,10 +34,12 @@ public class EnemyMovement : MonoBehaviour
     public float timeToUnstun = 0;
     public float currentTime;
     public float Movespeed = 3;
+    GameObject DamageDealer;
 
     // Start is called before the first frame update
     void Start()
     {
+        DamageDealer = GetComponentInChildren<DamagePlayer>().gameObject;
         currentIndex = 0;
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -102,6 +104,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (CanUnstun())
             {
+                GetComponent<Light>().enabled = true;
                 GetComponent<Light>().enabled = true;
                 agent.speed = Movespeed;
                 IsStunned = false;
@@ -232,6 +235,7 @@ public class EnemyMovement : MonoBehaviour
     public void StunEnemy()
     {
         IsStunned = true;
+        DamageDealer.SetActive(false);
         GetComponent<Light>().enabled = false;
         agent.speed = 0;
         timeToUnstun = Time.time + stunDelay;

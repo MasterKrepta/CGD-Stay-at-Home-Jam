@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
         movement = new Vector3(h, 0, v);
 
         rb.velocity = movement * MoveSpeed * Time.deltaTime;
-        
+
+        //transform.position = new Vector3(transform.position.x, .5f, transform.position.z); //TODO hacky clamp
 
         if (movement == Vector3.zero)
         {

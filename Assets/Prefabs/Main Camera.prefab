@@ -128,4 +128,4 @@ MonoBehaviour:
   dialogText: {fileID: 0}
   index: 0
   displayTime: 2
-  typingSpeed: 0.05
+  typingSpeed: 0.0000001
