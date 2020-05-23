@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
         v = Input.GetAxis("Vertical");
 
         movement = new Vector3(h, 0, v);
+
+        rb.velocity = movement * MoveSpeed * Time.deltaTime;
         
-        rb.AddForce(movement * MoveSpeed);
-        //transform.Translate(MoveSpeed * movement * Time.deltaTime, Space.World);
 
         if (movement == Vector3.zero)
         {
