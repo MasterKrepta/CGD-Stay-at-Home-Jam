@@ -19,14 +19,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
 
         movement = new Vector3(h, 0, v);
 
-        rb.velocity = movement * MoveSpeed * Time.deltaTime;
+        rb.velocity = movement * MoveSpeed;
+        transform.LookAt(transform.position +  movement);
 
         //transform.position = new Vector3(transform.position.x, .5f, transform.position.z); //TODO hacky clamp
 
@@ -39,11 +40,11 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Moving", true);
         }
 
-        if (movement != Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(movement);
-        }
-        
+        //if (movement != Vector3.zero)
+        //{
+        //    transform.rotation = Quaternion.LookRotation(movement);
+        //}
+
 
     }
 
