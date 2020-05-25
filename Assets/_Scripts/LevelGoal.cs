@@ -71,5 +71,11 @@ public class LevelGoal : MonoBehaviour
         SceneManager.LoadScene(LevelToLoad);
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            StartCoroutine("LevelTransition");
+        }
+    }
 }
