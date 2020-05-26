@@ -97,8 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 5fc19632d80216249b2d5218726ab092,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -58127,7 +58126,27 @@ PrefabInstance:
     - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 2
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.64521605
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.07863116
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38677dff1934e8646a634c70991ed191, type: 3}

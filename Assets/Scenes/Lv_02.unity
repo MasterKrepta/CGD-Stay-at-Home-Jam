@@ -29404,7 +29404,7 @@ PrefabInstance:
     - target: {fileID: 9115921218615717288, guid: 9970bb7f4e642d04dae2969bcf39b68f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9115921218615717292, guid: 9970bb7f4e642d04dae2969bcf39b68f,
         type: 3}
@@ -106029,6 +106029,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.64521605
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.07863116
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 563907480691498215, guid: 38677dff1934e8646a634c70991ed191,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38677dff1934e8646a634c70991ed191, type: 3}
