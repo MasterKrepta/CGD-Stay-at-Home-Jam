@@ -36163,3 +36163,72 @@ PrefabInstance:
     - {fileID: 2336605936880032592, guid: 7a0c80b1e314b1547b5a8c1ecad2643b, type: 3}
     - {fileID: 2427340228969824724, guid: 7a0c80b1e314b1547b5a8c1ecad2643b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a0c80b1e314b1547b5a8c1ecad2643b, type: 3}
+--- !u!1001 &8541289547538977882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -43.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -30.997356
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 78.45579
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.24632941
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70031977
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.28437036
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6066362
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 44.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 98.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774277, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168306290354774279, guid: 5ba1c947a9ecae0469c2e0799671480b,
+        type: 3}
+      propertyPath: m_Name
+      value: Directional Light (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ba1c947a9ecae0469c2e0799671480b, type: 3}
