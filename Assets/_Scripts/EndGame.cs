@@ -36,9 +36,6 @@ public class EndGame : MonoBehaviour
         dialog.Add("Oh thank you.. but... but... i'm.... Full!!!!");
 
         dialog.Add("BREAK");
-
-        
-
     }
 
 
@@ -53,7 +50,7 @@ public class EndGame : MonoBehaviour
     void DisablePlayerControl()
     {
         MonoBehaviour[] scripts = player.GetComponents<MonoBehaviour>();
-
+        player.GetComponentInChildren<Animator>().SetBool("Moving", false);
         foreach (var s in scripts)
         {
             s.enabled = false;

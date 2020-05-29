@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 05b6fc195b63790408a95ade85843599, type: 2}
+  effect: {fileID: 293877501515238447, guid: 23461bcf731648748982e5f27832be7c, type: 3}
   BitesNeeded: 3
 --- !u!114 &855380728
 MonoBehaviour:

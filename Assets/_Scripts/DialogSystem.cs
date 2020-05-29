@@ -32,7 +32,7 @@ public class DialogSystem : MonoBehaviour
     {
         dialog.Add("Hey... Wake up");
         dialog.Add("The Fairy Feast is starting soon");
-        dialog.Add("You need to find a way out");
+        dialog.Add("You need to find a way out: (Move with WASD)");
         dialog.Add("Face the dirt to eat your way through the maze");
         dialog.Add("BREAK");
 
