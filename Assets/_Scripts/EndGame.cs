@@ -13,10 +13,13 @@ public class EndGame : MonoBehaviour
     [SerializeField] float displayTime = 2;
     [SerializeField] float typingSpeed = .05f;
     Transform player;
+    [SerializeField] AudioClip[] clips;
+    AudioSource source;
 
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         player = FindObjectOfType<PlayerMovement>().transform;
         dialogBox.SetActive(false);
 
@@ -70,6 +73,11 @@ public class EndGame : MonoBehaviour
         StartCoroutine(ShowText());
     }
 
+    void PlayAudio()
+    {
+        source.clip = clips[UnityEngine.Random.Range(0, clips.Length)];
+        source.Play();
+    }
     IEnumerator ShowText()
     {
 
@@ -79,7 +87,7 @@ public class EndGame : MonoBehaviour
             dialogBox.SetActive(false);
             yield break;
         }
-
+        Invoke("PlayAudio", 1f);
         dialogText.text = "";
 
         if (dialog[index] == "BREAK")

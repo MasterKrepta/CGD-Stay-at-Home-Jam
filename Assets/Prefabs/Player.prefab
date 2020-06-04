@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 1.2
-  biteDelay: 0.25
+  biteDelay: 0.5
 --- !u!114 &3007441858412416976
 MonoBehaviour:
   m_ObjectHideFlags: 0

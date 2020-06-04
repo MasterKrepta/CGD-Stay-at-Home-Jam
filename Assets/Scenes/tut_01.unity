@@ -13482,10 +13482,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 724101059, guid: 47f6c4f8ab74ef24998fbe2ebefe68d5, type: 3}
-      propertyPath: biteDelay
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3007441858029217804, guid: 47f6c4f8ab74ef24998fbe2ebefe68d5,
         type: 3}
       propertyPath: m_LocalPosition.x

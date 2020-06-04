@@ -57,3 +57,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dafa7fb203faf54c9cc17a75b81495a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogBox: {fileID: 0}
+  dialogText: {fileID: 0}
+  index: 0
+  displayTime: 2
+  typingSpeed: 0.05
+  clips:
+  - {fileID: 8300000, guid: 90a66e9693daabf4689a20481e18bdf0, type: 3}
+  - {fileID: 8300000, guid: 4a590d733f7004b4e852baf59dcc19c6, type: 3}
+  - {fileID: 8300000, guid: 656d448044afd744ab0c329e47eeabc7, type: 3}

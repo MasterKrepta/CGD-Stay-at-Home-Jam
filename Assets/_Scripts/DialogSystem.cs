@@ -52,7 +52,7 @@ public class DialogSystem : MonoBehaviour
 
     void StartStory()
     {
-        Invoke("PlayAudio", 1f);
+      
     
         GetNextLine();
     }
@@ -79,7 +79,7 @@ public class DialogSystem : MonoBehaviour
             dialogBox.SetActive(false);
             yield break;
         }
-
+        Invoke("PlayAudio", 1f);
         dialogText.text = "";
 
         if (dialog[index] == "BREAK")
