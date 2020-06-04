@@ -14,10 +14,13 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] int index;
     [SerializeField] float displayTime = 2;
     [SerializeField] float typingSpeed = .05f;
+    [SerializeField] AudioClip[] clips;
+    AudioSource source;
 
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         dialogBox.SetActive(false);
 
         dialog.Clear();
@@ -49,8 +52,15 @@ public class DialogSystem : MonoBehaviour
 
     void StartStory()
     {
-        
+        Invoke("PlayAudio", 1f);
+    
         GetNextLine();
+    }
+
+    void PlayAudio()
+    {
+        source.clip = clips[UnityEngine.Random.Range(0, clips.Length)];
+        source.Play();
     }
     public void GetNextLine()
     {

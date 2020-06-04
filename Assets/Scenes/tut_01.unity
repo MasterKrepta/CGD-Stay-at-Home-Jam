@@ -10844,25 +10844,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1783210208}
     m_Modifications:
-    - target: {fileID: 2303836831955607966, guid: c7c5da4670cf70d408240e5d24c09cee,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484819897293785923, guid: c7c5da4670cf70d408240e5d24c09cee,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3089671497897163746, guid: c7c5da4670cf70d408240e5d24c09cee,
         type: 3}
       propertyPath: m_Name
       value: DirtCube (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3089671497897163746, guid: c7c5da4670cf70d408240e5d24c09cee,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3089671497897163750, guid: c7c5da4670cf70d408240e5d24c09cee,
         type: 3}
@@ -10917,26 +10902,6 @@ PrefabInstance:
     - target: {fileID: 3089671497897163750, guid: c7c5da4670cf70d408240e5d24c09cee,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437693105568003966, guid: c7c5da4670cf70d408240e5d24c09cee,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7493564664162924277, guid: c7c5da4670cf70d408240e5d24c09cee,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971030611080132766, guid: c7c5da4670cf70d408240e5d24c09cee,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296172667972072652, guid: c7c5da4670cf70d408240e5d24c09cee,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13517,6 +13482,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 724101059, guid: 47f6c4f8ab74ef24998fbe2ebefe68d5, type: 3}
+      propertyPath: biteDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3007441858029217804, guid: 47f6c4f8ab74ef24998fbe2ebefe68d5,
         type: 3}
       propertyPath: m_LocalPosition.x

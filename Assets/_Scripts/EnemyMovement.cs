@@ -35,10 +35,13 @@ public class EnemyMovement : MonoBehaviour
     public float currentTime;
     public float Movespeed = 3;
     GameObject DamageDealer;
+    Collider[] colliders;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        colliders = GetComponents<Collider>();
         DamageDealer = GetComponentInChildren<DamagePlayer>().gameObject;
         currentIndex = 0;
         agent = GetComponent<NavMeshAgent>();
@@ -104,14 +107,13 @@ public class EnemyMovement : MonoBehaviour
         {
             if (CanUnstun())
             {
-                GetComponent<Light>().enabled = true;
-                GetComponent<Light>().enabled = true;
-                agent.speed = Movespeed;
-                IsStunned = false;
+                Unstun();
             }
         }
         
     }
+
+    
 
     private void ChaseMovement()
     {
@@ -234,12 +236,31 @@ public class EnemyMovement : MonoBehaviour
 
     public void StunEnemy()
     {
+        foreach (var c in colliders)
+        {
+            c.enabled = false;
+        }
         IsStunned = true;
         DamageDealer.SetActive(false);
         GetComponent<Light>().enabled = false;
+        
         agent.speed = 0;
         timeToUnstun = Time.time + stunDelay;
     }
+
+    private void Unstun()
+    {
+        foreach (var c in colliders)
+        {
+            c.enabled = true;
+        }
+        GetComponent<Light>().enabled = true;
+        GetComponent<Light>().enabled = true;
+        DamageDealer.SetActive(true);
+        agent.speed = Movespeed;
+        IsStunned = false;
+    }
+
     private bool CanUnstun()
     {
         var result = Time.time > timeToUnstun ? true : false;

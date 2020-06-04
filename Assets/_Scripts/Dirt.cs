@@ -11,6 +11,7 @@ public class Dirt : MonoBehaviour, IHideable
     private int currentBites = 0;
     FlashOnHit flash;
     AudioSource soundClip;
+    [SerializeField] AudioClip[] clips;
     Vector3 spawnPoint;
 
     private void OnEnable()
@@ -24,7 +25,10 @@ public class Dirt : MonoBehaviour, IHideable
     public void BiteDirt()
     {
         flash.FlashColors();
+      
+        soundClip.clip = clips[UnityEngine.Random.Range(0, clips.Length)];
         soundClip.Play();
+
         currentBites++;
         if (currentBites >= BitesNeeded)
         {

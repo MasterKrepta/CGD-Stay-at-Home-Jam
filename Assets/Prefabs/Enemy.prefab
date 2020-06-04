@@ -205,6 +205,7 @@ MonoBehaviour:
   timeToUnstun: 0
   currentTime: 0
   Movespeed: 3
+  DamageObj: {fileID: 1352378321}
 --- !u!114 &1574296144464646262
 MonoBehaviour:
   m_ObjectHideFlags: 0
