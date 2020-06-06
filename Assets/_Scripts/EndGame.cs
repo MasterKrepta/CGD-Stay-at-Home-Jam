@@ -16,6 +16,7 @@ public class EndGame : MonoBehaviour
     Transform player;
     [SerializeField] AudioClip[] clips;
     AudioSource source;
+    bool canQuit = false;
 
 
     private void Start()
@@ -29,6 +30,8 @@ public class EndGame : MonoBehaviour
         PopulateEnding();
 
     }
+
+    
 
     private void PopulateEnding()
     {
@@ -95,9 +98,8 @@ public class EndGame : MonoBehaviour
 
         if (dialog[index] == "BREAK")
         {
-            
+            canQuit = true;
             dialogBox.SetActive(false);
-            QuitGame();
 
 
             yield break;
@@ -129,6 +131,11 @@ public class EndGame : MonoBehaviour
         {
             DisablePlayerControl();
             StartStory();
+        }
+
+        if (canQuit)
+        {
+            QuitGame();
         }
     }
 
