@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class EndGame : MonoBehaviour
 {
@@ -34,9 +35,11 @@ public class EndGame : MonoBehaviour
         dialog.Add("You Finally made it");
         dialog.Add("We were about to start without you");
         dialog.Add("There is so much food here, you wont go hungry");
-        dialog.Add("BREAK");
+        
 
-        dialog.Add("Oh thank you.. but... but... i'm.... Full!!!!");
+        dialog.Add(":):  Oh thank you.. but... but... i'm.... Full!!!!");
+
+        dialog.Add ("Thanks for Playing... Hit escape to Quit");
 
         dialog.Add("BREAK");
     }
@@ -92,7 +95,10 @@ public class EndGame : MonoBehaviour
 
         if (dialog[index] == "BREAK")
         {
+            
             dialogBox.SetActive(false);
+            QuitGame();
+
 
             yield break;
         }
@@ -107,6 +113,14 @@ public class EndGame : MonoBehaviour
         }
         yield return new WaitForSeconds(displayTime);
         GetNextLine();
+    }
+
+    private void QuitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void Update()

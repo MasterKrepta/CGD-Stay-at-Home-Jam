@@ -42136,11 +42136,6 @@ PrefabInstance:
       objectReference: {fileID: 1296088328}
     - target: {fileID: 5917027100112883093, guid: 9b3ca600fcf4e7f49b27fbec7fee499b,
         type: 3}
-      propertyPath: index
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917027100112883093, guid: 9b3ca600fcf4e7f49b27fbec7fee499b,
-        type: 3}
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 813558319}
